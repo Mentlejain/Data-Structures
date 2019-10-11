@@ -57,7 +57,7 @@ void menu(DLL<N> &L)
 				cin>>n;
 				if(n>L.length())
 				{
-					cout<<"Index not found";
+					cout<<"Index not found"<<endl;
 				}
 				else
 				{
@@ -74,11 +74,11 @@ void menu(DLL<N> &L)
 				{
 					cout<<"Value found at node: "<<n<<endl;
 				}
-				else if(n==0)
+				else if(n==-1)
 				{
 					cout<<"List is empty"<<endl;
 				}
-				else if(n==-1)
+				else if(n==0)
 				{
 					cout<<"Value not found"<<endl;
 				}
