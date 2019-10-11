@@ -228,7 +228,7 @@ int DLL<N>::sibv(N val)
 {
 	if(isempty())
 	{
-		return 0;
+		return -1;
 	}
 	else
 	{
@@ -247,7 +247,7 @@ int DLL<N>::sibv(N val)
 			}
 			p=p->next;
 		}
-		return -1;
+		return 0;
 	}
 }
 template <class N>
@@ -256,7 +256,6 @@ N DLL<N>::svbi(int pos)
 	if(isempty())
 	{
 		cout<<"List is empty"<<endl;
-	//	return NULL;
 	}
 	else
 	{
