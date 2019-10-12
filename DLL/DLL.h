@@ -14,7 +14,6 @@ class DLL
 	private:
 		int l;
 		node<N>* head=NULL;
-		node<N>* prev=NULL;
 	public:
 		DLL();
 		node<N>* headptr();
