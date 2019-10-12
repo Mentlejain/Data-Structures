@@ -271,7 +271,7 @@ void CSLL<N>::reverse()
 			c->next=p;
 			p=c;
 			c=n;
-		}while(p!=tail->next);
+		}while(p!=tail);
 	}
 }
 template <class N>
