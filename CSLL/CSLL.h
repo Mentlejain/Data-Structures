@@ -297,13 +297,13 @@ CSLL<N> CSLL<N>:: operator+ (CSLL<N> &L)
 	{
 		res.insert(-1,p->info);
 		p=p->next;
-	}while(p!=tail);
+	}while(p!=tail and p!=NULL);
 	p=L.tailptr()->next;
 	do
 	{
 		res.insert(-1,p->info);
 		p=p->next;
-	}while(p!=L.tailptr());
+	}while(p!=L.tailptr() and p!=NULL);
 	p->next=tail->next;
 	p=NULL;
 	delete p;
