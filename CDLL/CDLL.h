@@ -217,6 +217,20 @@ void CDLL<N>::reverse()
 	}
 	else
 	{
+		/*
+		node<N>* n=head;
+		node<N>* p=head->next;
+		do{
+			n->next = n->prev;
+			n->prev=p;
+			n = n->prev;
+			p = p->next;
+		}while(n!=head);
+		p = NULL;
+		n = NULL;
+		delete p;
+		delete n;
+		head=head->next;*/
 		node<N>* p=NULL;
 		node<N>* t=NULL;
 		p=head;
