@@ -43,7 +43,8 @@ void sort<atype>::bubble(atype *a,int l)
 template <class atype>
 void sort<atype>::selection(atype *a,int l)
 {
-	atype min,t;
+	int min;
+	atype t;
 	for(int i=0;i<l-1;i++)
 	{
 		min=i;
@@ -109,4 +110,5 @@ int main()
 			cout<<"Invalid option"<<endl;
 		}
 	}
+	getch();
 }
