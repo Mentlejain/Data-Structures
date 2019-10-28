@@ -11,7 +11,7 @@ class sort
 	void quick(atype*,int low, int high);
 	void display(atype*, int);
 	int partition(atype*, int low, int high);
-	atype* merge()
+	atype* merge(atype*, atype*)
 };
 template <class atype>
 void sort<atype>::insertion(atype *a,int l)

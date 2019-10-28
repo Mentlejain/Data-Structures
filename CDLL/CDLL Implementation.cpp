@@ -23,7 +23,7 @@ void menu(CDLL<N> &L)
 		{
 			case 1:
 			{
-				cout<<"1=Beginning -1=End Else any position: ";
+				cout<<"0=Beginning -1=End Else any position: ";
 				cin>>n;
 				cout<<"Enter data: ";
 				cin>>x;
@@ -44,7 +44,7 @@ void menu(CDLL<N> &L)
 			}
 			case 4:
 			{
-				cout<<"1=Beginning -1=End Else any position";
+				cout<<"0=Beginning -1=End Else any position";
 				cin>>n;
 				L.del(n);
 				L.display();
@@ -69,18 +69,14 @@ void menu(CDLL<N> &L)
 				cout<<"Enter value:";
 				cin>>n;
 				n=L.sibv(n);
-				if(n>=1)
-				{
-					cout<<"Value found at node: "<<n<<endl;
-				}
-				else if(n==0)
-				{
-					cout<<"List is empty"<<endl;
-				}
-				else if(n==-1)
+				if(n==-1)
 				{
 					cout<<"Value not found"<<endl;
 				}
+				else{
+					cout<<"Value found at node: "<<n<<endl;
+				}
+				
 				break;
 			}
 			case 7:
@@ -142,7 +138,7 @@ int main()
 		
 			case 4:
 			{
-				exit(3000);
+				return 0;
 			}
 		}
 	}
