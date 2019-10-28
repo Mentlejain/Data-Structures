@@ -8,6 +8,10 @@ class sort
 	void bubble(atype*,int l);
 	void insertion(atype*,int l);
 	void selection(atype*,int l);
+	void quick(atype*,int low, int high);
+	void display(atype*, int);
+	int partition(atype*, int low, int high);
+	atype* merge(atype*, atype*)
 };
 template <class atype>
 void sort<atype>::insertion(atype *a,int l)
@@ -61,7 +65,42 @@ void sort<atype>::selection(atype *a,int l)
 	}
 }
 template <class atype>
-void display(atype *a,int l)
+void sort<atype>::quick(atype* p, int low, int high)
+{
+	if(low<high)
+	{
+		int i = partition(p, low, high);
+		quick(p,low,i-1);
+		quick(p,i+1,high);
+	}
+}
+template <class atype>
+int sort<atype>::partition(atype* p, int low, int high)
+{
+	atype temp;
+	atype pivit = p[low];
+	int j = low;
+	for(int i=low+1; i<=high; i++)
+	{	
+		
+		if(p[i]<=pivit)
+		{
+			j++;
+			temp = p[i];
+			p[i] = p[j];
+			p[j] = temp;
+		}
+		
+	}
+	j;
+	temp = p[low];
+	p[low] = p[j];
+	p[j] = temp;
+
+	return j;
+}
+template <class atype>
+void sort<atype>::display(atype *a,int l)
 {
 	for(int i=0;i<l;i++)
 	{
@@ -85,24 +124,31 @@ int main()
 	cout<<"1. Bubble Sort"<<endl;
 	cout<<"2. Insertion Sort"<<endl;
 	cout<<"3. Selection Sort"<<endl;
+	cout<<"4. Quick Sort"<<endl;
 	switch (getch()-48)
 	{
 		case 1:
 		{
 			S.bubble(L,n);
-			display(L,n);
+			S.display(L,n);
 			break;
 		}
 		case 2:
 		{
 			S.insertion(L,n);
-			display(L,n);
+			S.display(L,n);
 			break;
 		}
 		case 3:
 		{
 			S.selection(L,n);
-			display(L,n);
+			S.display(L,n);
+			break;
+		}
+		case 4:
+		{
+			S.quick(L,0,n-1);
+			S.display(L,n);
 			break;
 		}
 		default:
