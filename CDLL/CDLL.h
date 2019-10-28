@@ -208,7 +208,7 @@ int CDLL<N>::sibv(N val)
 	}
 	else
 	{
-		int ind=1;
+		int ind=0;
 		node<N>* p;
 		p=head;
 		do
@@ -232,12 +232,11 @@ N CDLL<N>::svbi(int pos)
 	if(isempty())
 	{
 		cout<<"List is empty"<<endl;
-	//	return NULL;
 	}
 	else
 	{
 		N val;
-		if(pos==1 or pos==0)
+		if(pos==0)
 		{
 			val=head->info;
 			return val;
